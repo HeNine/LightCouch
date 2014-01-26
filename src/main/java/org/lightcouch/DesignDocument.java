@@ -26,7 +26,7 @@ import com.google.gson.annotations.SerializedName;
  * @author Ahmed Yehia
  */
 public class DesignDocument extends Document {
-	
+
 	private String language;
 	private Map<String, MapReduce> views;
 	@SerializedName("validate_doc_update")
@@ -59,7 +59,7 @@ public class DesignDocument extends Document {
 	public Map<String, String> getLists() {
 		return lists;
 	}
-	
+
 	public Map<String, String> getUpdates() {
 		return updates;
 	}
@@ -108,7 +108,7 @@ public class DesignDocument extends Document {
 	}
 
 	/**
-	 * Indicates whether some other design document is equals to this one. 
+	 * Indicates whether some other design document is equals to this one.
 	 */
 	@Override
 	public boolean equals(Object obj) {
@@ -164,6 +164,20 @@ public class DesignDocument extends Document {
 	public static class MapReduce {
 		private String map;
 		private String reduce;
+
+        public MapReduce(){
+
+        }
+
+        /**
+         * MapReduce constructor with map and reduce functions filled in.
+         * @param map Map function as a {@link String}
+         * @param reduce Reduce function as a {@link String}
+         */
+        public MapReduce(String map, String reduce){
+            this.map = map;
+            this.reduce = reduce;
+        }
 
 		public String getMap() {
 			return map;
